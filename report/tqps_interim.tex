@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\title{Top Quark Partner Spectra}
+\maketitle
+The discovery of a Higgs-like boson at the Large Hadron Collider (LHC), CERN, was the crowning of an international effort in science and engineering that spanned over 40 years. Efforts are ongoing to confirm if this particle is the Standard Model (SM) Higgs, or that of some other theoretical regime. Indeed, there are many alternate theories that hold a Higgs as the root of electroweak symmetry breaking, as in the SM, but offer more natural solutions to issues such as the hierarchy problem. One such class of scenarios is a composite Higgs (i.e. a bound state) which arises from a new strongly interacting sector, and one consequence of this is new particles in the form of heavier fermionic resonances. In particular it is expected that due to the relatively large Yukawa coupling of the top quark, the top sector will play an important role in such models. Furthermore, in order to accommodate a Higgs boson with mass around 125 GeV, top partners would be required to exhibit masses \(\sim\) TeV and hence within reach of the LHC. \\
+\hfill\break
+The theoretical framework considered here is that of a minimal composite Higgs model (MCHM) where fermionic resonances are described using partial compositeness. In this regime, a Lagrangian can be constructed which gives rise to the following mass matrix (note Eq. \eqref{eq2} simply introduces some labels): \\
+\begin{align}
+\label{eq1}
+ -\mathcal{L}_{m} &= 
+\overline{\begin{pmatrix}
+t_{L} \\ T_{L} \\ X^{2/3}_{L} \\ \tilde{T}_{L}
+\end{pmatrix}}
+\begin{pmatrix}
+0 & \Delta_{L} & 0 & 0 \\
+0 & M_{0} + \frac{fys^{2}}{2} & \frac{yfs^{2}}{2} & \frac{yfsc}{\sqrt{2}} \\
+0 & \frac{yfs^{2}}{2} & M_{0} + \frac{fys^{2}}{2} & \frac{yfsc}{\sqrt{2}} \\
+\Delta_{R} & \frac{yfsc}{\sqrt{2}} & \frac{fysc}{\sqrt{2}} & M_{0} + yfc^{2}
+\end{pmatrix}
+\begin{pmatrix}
+t_{R} \\ T_{R} \\ X^{2/3}_{R} \\ \tilde{T}_{R}
+\end{pmatrix} + h.c. \\
+\label{eq2}
+&= \left(\psi_{L}^{0}\right)^\dag M^{t} \psi_{R}^{0} + h.c.,
+\end{align}
+\hfill\break
+where \(\Delta_{L/R}\) describe the degree of mixing between composite and elementary states, \(M_{0} \sim 10^{4}\) GeV is the composite mass scale, the dimensionless parameter \(0 \leq y \leq 4\pi\) again represents some coupling between composite and elementary states and \(f,s\) and \(c\) are constants depending on the weak scale \(v \sim\) 246 GeV. \(\left(\psi_{L}^0\right)^\dag\) and \(\psi_{R}^0\) are basis vectors of the left and right chiral components of the mixed states, respectively. A change of basis is desirable which would leave possible masses of top partners more readily deducible. This is accomplished by setting \(\left(\psi_{L}\right)^\dag = \left(U_{L}\psi_{L}^{0}\right)^\dag\) and \(\psi_{R} = U_{R}\psi_{R}^{0}\) such that \(M_{diag}^{t} = U_{L}M^{t}U_{R}^\dag\) is diagonal. This is known as a bi-unitary transformation, and can be implemented such that the entries of \(M_{diag}^{t}\) are predictions of the masses of top partners. \\
+\hfill\break
+Any real or complex \(m \times n\) matrix \(M\) can be factorised into a form \(M = U\Sigma V^\dag\), where \(U\) is an \(m \times m\) real or complex unitary matrix, \(\Sigma\) is an \(m \times n\) rectangular diagonal matrix with non-negative real numbers on the diagonal and \(V^\dag\) (the Hermitian conjugate of \(V\)) is an \(n \times n\) real or complex unitary matrix. This is known as the singular value decomposition (SVD) of \(M\). It is closely related to the eigendecomposition and has many uses in signal processing and statistics. An important property of SVD is that if all singular values of \(M\) (entries on the diagonal of \(\Sigma\)) are non-degenerate and non-zero, then the unitary matrices are unique. Hence any such decomposition of \(M^{t}\) which fulfils this property meets exactly the requirements of the basis change motivated above. \\
+\hfill\break
+A (preliminary) algorithm was implemented that factorises \(M^{t}\) in the desired fashion for an exhaustive combination of \(\Delta_{L/R}\) and \(y\) (the only free parameters which can affect the results). Naturally, the lowest mass eigenstate must be the currently observed top quark mass \(m_{t} \sim\) 173 GeV, and this was set as a constraint to within a predefined window. The results are then such suitable combinations (predictions) of the varied parameters, and the three corresponding predictions of top quark partner masses. Initially, \(y\) was incremented in steps of 0.01, \(\Delta_{L} = \Delta_{R}\) was constrained as \(\leq10^5\) (it is expected that this value should live approximately around the composite mass scale) and the allowed range of the lowest mass eigenstate was set 170 GeV \(\leq m_{t} \leq\) 175 GeV. \\
+\hfill\break
+Early results seem to show three distinct regions, centred on \(\left(\Delta_{L/R}, y\right) \simeq\) (6400, 12.5), (10800, 6.28) and (19200, 4.18) with mass predictions of all eigenstates within the range \(\sim\) \(10-23\) TeV. This could be within reach of the LHC. Beyond this, a more detailed analysis is still to be performed. Ultimately, past and current LHC data should be searched for any hints of top partners being present at these masses, however this is no easy task. In order to gain more confidence in these numbers, a more thorough investigation is needed (and is ongoing). For example, the \(\Delta_{L} = \Delta_{R}\) condition could be relaxed, and the composite mass scale can be reduced to definitely accommodate top partners at current LHC energies. Of course this would have ramifications in the theory, such as changing the mixing angle between composite and elementary states, and this needs to be considered and remain physically viable. Perhaps revisiting the underlying theory to gain a first estimate on the degree of mixing between states for example, would be a good approach before looking into LHC phenomenology, which is the natural end-goal of this project.
+\end{document}
